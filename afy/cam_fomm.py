@@ -3,7 +3,7 @@ from sys import platform as _platform
 import glob
 import yaml
 import time
-import requests
+import request
 
 import numpy as np
 import cv2
@@ -57,7 +57,7 @@ def is_new_frame_better(source, driving, predictor):
 
 def load_stylegan_avatar():
     url = "https://thispersondoesnotexist.com/image"
-    r = requests.get(url, headers={'User-Agent': "My User Agent 1.0"}).content
+    r = request.get(url, headers={'User-Agent': "My User Agent 1.0"}).content
 
     image = np.frombuffer(r, np.uint8)
     image = cv2.imdecode(image, cv2.IMREAD_COLOR)
